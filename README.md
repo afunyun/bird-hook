@@ -65,31 +65,31 @@ schtasks /Create /TN "eBird Alerts" /SC MINUTE /MO 30 ^
 
 ## task scheduler version:
 
-Open task scheduler and 'Create Task'
+Open task scheduler and `Create Task`
 
-General:
+### General:
 
 Name: eBird Alerts
 
 optional: `“Run only when user is logged on”` 
 - if you are using toast messages you can select this to prevent a lot of notifications upon unlocking your pc, you may not care tho
 
-Triggers:
+### Triggers:
 
 Select new and then `Begin the task: On a schedule → Daily`
 
 `Repeat task every 30 minutes` for `Indefinitely`
 
-Actions:
+### Actions:
 
 Select new and then `Program/script: powershell`
 
-arguments:
+### arguments:
 
 `-NoProfile -ExecutionPolicy Bypass -File "C:\path_to_mechanical-birder.ps1"`
 
 
-Start in: path of the directory 
+`Start in:` path of the directory 
 
 Conditions: uncheck “Start the task only if the computer is on AC power” if your pc is a laptop and you want it to run without wall power
 
