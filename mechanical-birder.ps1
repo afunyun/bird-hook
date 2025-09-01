@@ -5,11 +5,11 @@
 param(
 #  [string]$ApiToken = $env:EBIRD_API_TOKEN,
 #  [string]$Region   = $env:EBIRD_REGION_CODE,
+#  [string]$DiscordWebhook = $env:DISCORD_WEBHOOK_URL,
   [int]   $BackDays = 7,
   [ValidateSet('simple','full')]
   [string]$Detail   = 'full',
-  [int]   $MaxResults = 200,
-#  [string]$DiscordWebhook = $env:DISCORD_WEBHOOK_URL
+  [int]   $MaxResults = 200
 )
 
 # these set the API token, region, and webhook so the later bits can use it, assuming you uncomment the lines above in the params.
