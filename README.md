@@ -22,7 +22,7 @@ Install-Module BurntToast -Scope CurrentUser -Force
 
 ## getting your county code:
 
-- List all Texas counties and grab yours:
+- List all counties in a state and grab yours, this is for Texas:
 
 ```powershell
 $hdr = @{ 'X-eBirdApiToken' = 'YOUR_API_KEY' }
