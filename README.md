@@ -44,7 +44,11 @@ if you want to, you can put the API key directly in the script, or you can set t
 powershell -ExecutionPolicy Bypass -File "C:\path_to_mechanical-birder.ps1"
 ```
 
-## Setup for the trigger that runs this thing every 30 mins can be done via task scheduler OR via terminal. 
+## Setup for the trigger (every 30 mins)
+### can be done via task scheduler OR via terminal. 
+### You do not need to do both
+
+## Terminal version:
 
 I am not on windows so i can't test this but copilot says it'd be:
 
@@ -54,7 +58,7 @@ schtasks /Create /TN "eBird Alerts" /SC MINUTE /MO 30 ^
   /RL LIMITED
 ```
 
-## For task scheduler:
+## task scheduler version:
 
 Open task scheduler and 'Create Task'
 
