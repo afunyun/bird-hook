@@ -64,7 +64,7 @@ if (-not $seen) { $seen = @() }
 # this makes sure there isn't a timebomb in the $seen variable and turns everything into a string.
 
 $seen = @($seen | ForEach-Object { if ($_ -is [string]) { $_ } else { $_.ToString() } })
-$seenHash = [System.Collections.Generic.HashSet[string]]::new($seen)
+$seenHash = New-Object 'System.Collections.Generic.HashSet[string]' (,[string[]]$seen)
 
 # set headers for the request to the API, these are what authenticate your system to the API
 
@@ -149,13 +149,5 @@ if ($new.Count -gt 0) {
   Write-Log "Nothing new found"
 }
 
-# this part is what saves the results (first it checks if the file is even there then it merges existing seen data with new entries):
-
-$existingSeen = @()
-if (Test-Path $SeenFile) {
-  try { $existingSeen = Get-Content $SeenFile | ConvertFrom-Json } catch { $existingSeen = @() }
-}
-$allSeen = [System.Collections.Generic.HashSet[string]]::new($existingSeen + $seenHash.ToArray())
-($allSeen.ToArray() | ConvertTo-Json -Depth 3) | Set-Content -Path $SeenFile -Encoding UTF8
-
-# i had copilot review this since i can't test and changed some stuff on suggestion so if it doesn't work just blame copilot 4Head
+# Save the updated list of seen observation keys back to the file.
+($seenHash.ToArray() | ConvertTo-Json -Depth 3) | Set-Content -Path $SeenFile -Encoding UTF8
