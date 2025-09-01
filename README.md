@@ -43,7 +43,7 @@ if you want to, you can put the API key directly in the script, or you can set t
 [Environment]::SetEnvironmentVariable('DISCORD_WEBHOOK_URL','FULL WEBHOOK URL HERE','User')
 ```
 
-## Test: 
+## Test run without waiting for task timer: 
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File "C:\path_to_mechanical-birder.ps1"
