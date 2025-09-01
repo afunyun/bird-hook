@@ -24,13 +24,13 @@ if (-not $Region) {
 }
 
 if (-not $DiscordWebhook) {
-  $DiscordWebhook = 'https://discord.com/api/webhooks/FULL WEBHOOK URL IN HERE'
+  $DiscordWebhook = 'FULL WEBHOOK URL IN HERE'
 }
 
 # this is just setting up the save location in appdata for the alerts so it knows what was saved before. 
 # you can also go here to see all the previous sightings that were saved.
 
-$StateDir  = Join-Path $env:LOCALAPPDATA 'ebird-alerts'
+$StateDir  = Join-Path $env:LOCALAPPDATA 'mechanical-birder'
 $SeenFile  = Join-Path $StateDir ("{0}_seen.json" -f ($Region -replace '-', '_'))
 $LogFile   = Join-Path $StateDir 'alerts.log'
 New-Item -ItemType Directory -Force -Path $StateDir | Out-Null
