@@ -71,7 +71,8 @@ General:
 
 Name: eBird Alerts
 
-“Run only when user is logged on” (if you are using toast messages you can select this to prevent a lot of notifications upon unlocking your pc, you may not care tho)
+optional: `“Run only when user is logged on”` 
+- if you are using toast messages you can select this to prevent a lot of notifications upon unlocking your pc, you may not care tho
 
 Triggers:
 
