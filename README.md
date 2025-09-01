@@ -1,11 +1,16 @@
 ## To get this working you will need:
 
-powershell
-an ebird api key
-county code (see below)
-BurntToast (notifications)
-a discord server with a configured webhook available
-the ability to set a task scheduler task
+- powershell
+- an ebird api key
+- county code (see below)
+- BurntToast (notifications)
+- a discord server with a configured webhook available
+- the ability to set a task scheduler task
+
+
+## SETUP
+
+Clone repo to a directory then complete below:
 
 ## if you want desktop notifications:
 
